@@ -56,7 +56,7 @@ colorscheme gruvbox
 
 "tema de barra airline
 let g:airline_theme='wombat'
-let g:airline_powerline_font=1
+let g:airline_powerline_fonts=1 
 
 "//////////////////////////////////////////////////////////////////////////
 "configuracion de atajos de teclado
@@ -64,20 +64,21 @@ let g:airline_powerline_font=1
 
 let mapleader = " "   " definicion de tecla lider, este caso barra espaciadora
 
-nmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>  "comando de 
-vmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>  "actualisacion
+"comaondo para actualizar NVIM
+nmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>   
+vmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>  
 
-nnoremap <leader>w :w<CR> "Comando de guardar
-nnoremap <leader>q :q<CR> "comando de salir
-nnoremap <leader>º :NERDTree<CR>  "despliegue de menu NERDTree
+"Comando de gurardar
+"mando de 
+nnoremap <leader>w :w<CR>         
+"comando de salir
+nnoremap <leader>q :q<CR>         
+"Comando para abrir NERDTREE
+nnoremap <leader>º :NERDTree<CR>  
 
 "/////////////////////////////////////////////////////////////////////////////
 " configuracion de coc
 " ///////////////////////////////////////////////////////////////////////////
-
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
-set encoding=utf-8
 
 " TextEdit might fail if hidden is not set.
 set hidden
