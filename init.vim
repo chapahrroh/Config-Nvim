@@ -29,8 +29,17 @@ highlight ColoColum ctermbg=0 guibg=lightgrey
 
 call plug#begin('/home/chapahrroh/.local/share/nvim/plugged')
 
-Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'                          "tema de colores
+Plug 'vim-airline/vim-airline'                  "barra airline
+Plug 'vim-airline/vim-airline-themes'            "thema para barra airline
+Plug 'lilydjwg/colorizer'                       "colorea comandos de colorea
+Plug 'ryanoasis/vim-devicons'                   "iconos para nvim
 
+Plug 'scrooloose/nerdtree'                      "menu de carpetas
+
+Plug 'vim-python/python-syntax'                 "syntaxis de python 
+
+Plug 'jiangmiao/auto-pairs'                     "enpareja parentesis
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "plugin de autocompletado
 
 call plug#end()
@@ -39,10 +48,28 @@ call plug#end()
 "Configuracion de Tema
 "/////////////////////////////////////////////////////////////////////////////
 
+" tema general
 set background=dark
 let ayucolor="dark"
 let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox 
+colorscheme gruvbox
+
+"tema de barra airline
+let g:airline_theme='wombat'
+let g:airline_powerline_font=1
+
+"//////////////////////////////////////////////////////////////////////////
+"configuracion de atajos de teclado
+"//////////////////////////////////////////////////////////////////////////
+
+let mapleader = " "   " definicion de tecla lider, este caso barra espaciadora
+
+nmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>  "comando de 
+vmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>  "actualisacion
+
+nnoremap <leader>w :w<CR> "Comando de guardar
+nnoremap <leader>q :q<CR> "comando de salir
+nnoremap <leader>º :NERDTree<CR>  "despliegue de menu NERDTree
 
 "/////////////////////////////////////////////////////////////////////////////
 " configuracion de coc
