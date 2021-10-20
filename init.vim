@@ -9,7 +9,7 @@ set mouse=a
 set sw=2
 set expandtab
 set smartindent
-set numberwidth=1
+set numberwidth=5
 set nowrap
 set noswapfile
 set nobackup
@@ -41,6 +41,11 @@ Plug 'vim-python/python-syntax'                 "syntaxis de python
 
 Plug 'jiangmiao/auto-pairs'                     "enpareja parentesis
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "plugin de autocompletado
+Plug 'sheerun/vim-polyglot'                     "marcado de syntaxis
+Plug 'mhinz/vim-signify'                        "marca nuevas lineas
+Plug 'Yggdroot/indentLine'                      "marca indentaciones
+Plug 'tpope/vim-fugitive'                       "pluguin de git
+Plug 'preservim/nerdcommenter'                  "añade comentarios auto
 
 call plug#end()
 
@@ -71,7 +76,7 @@ vmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>
 "Comando de gurardar
 "mando de 
 nnoremap <leader>w :w<CR>         
-"comando de salir
+"comando de  salir
 nnoremap <leader>q :q<CR>         
 "Comando para abrir NERDTREE
 nnoremap <leader>º :NERDTree<CR>  
@@ -98,7 +103,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
