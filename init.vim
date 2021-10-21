@@ -4,12 +4,12 @@
 
 syntax on
 set number
-set rnu
+set relativenumber
 set mouse=a
 set sw=2
 set expandtab
 set smartindent
-set numberwidth=5
+set numberwidth=1
 set nowrap
 set noswapfile
 set nobackup
@@ -85,7 +85,17 @@ nnoremap <leader>º :NERDTree<CR>
 "Configuracion de transparencia 
 "///////////////////////////////////////////////////////////////////////////
 
-
+let t:is_transparent = 0
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        set background=dark
+        let t:is_tranparent = 0
+    endif
+endfunction
+nnoremap <C-t> : call Toggle_transparent()<CR>
 
 "/////////////////////////////////////////////////////////////////////////////
 " configuracion de coc
