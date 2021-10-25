@@ -46,6 +46,10 @@ Plug 'mhinz/vim-signify'                        "marca nuevas lineas
 Plug 'Yggdroot/indentLine'                      "marca indentaciones
 Plug 'tpope/vim-fugitive'                       "pluguin de git
 Plug 'preservim/nerdcommenter'                  "añade comentarios auto
+Plug 'mattn/emmet-vim'                          "plantilla html-ccs
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  "resalta archvos en nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin'              "seguimiento de git en nerdtree
+Plug 'sudar/vim-arduino-syntax'                 "syntaxis arduino
 
 call plug#end()
 
@@ -74,12 +78,29 @@ nmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>
 vmap <F5> :source /home/chapahrroh/.config/nvim/init.vim<CR>  
 
 "Comando de gurardar
-"mando de 
+inoremap <leader>w <ESC>:w<CR>         
 nnoremap <leader>w :w<CR>         
+vnoremap <leader>w <ESC>:w<CR>         
 "comando de  salir
 nnoremap <leader>q :q<CR>         
 "Comando para abrir NERDTREE
-nnoremap <leader>º :NERDTree<CR>  
+nnoremap <leader>º :NERDTree<CR> 
+
+"compilar en  C para micro STC
+"
+nnoremap <leader>ñ  :call CompilarSDCC()<CR> 
+
+"////////////////////////////////////////////////////////////////////////
+"funciones
+"////////////////////////////////////////////////////////////////////////
+
+function! CompilarSDCC()
+  let archivo = expand('%:t') 
+  echo 'compilando '.archivo.':' 
+  sleep 2
+  execute ':!sdcc -mmcs51 --std-c99 '.archivo
+  sleep 2 
+endfunction
 
 "//////////////////////////////////////////////////////////////////////////
 "Configuracion de transparencia 
@@ -262,3 +283,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+
