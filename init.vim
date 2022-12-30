@@ -64,6 +64,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'                   "iconos para nvim
 
+
 "sintaxis
 Plug 'sheerun/vim-polyglot'
 
@@ -77,6 +78,9 @@ Plug 'lilydjwg/colorizer'                       "colorea comandos de colorea
 Plug 'mhinz/vim-signify'                        "marca nuevas lineas
 Plug 'tpope/vim-fugitive'                       "pluguin de git
 
+
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 "Plug 'mattn/emmet-vim'                          "plantilla html-ccs
 call plug#end()
 
@@ -124,7 +128,8 @@ let g:airline#extensions#tabline#enabled = 1
 "LSP configuracion
 
 lua << EOF
-
+require("mason").setup()
+require("mason-lspconfig").setup()
 -- Set up nvim-cmp.
   local cmp = require'cmp'
 
@@ -196,7 +201,8 @@ lua << EOF
   require('lspconfig')['html'].setup {
     capabilities = capabilities
   }
-
-
+  require('lspconfig')['ltex'].setup {
+    capabilities = capabilities
+  }
 EOF
 

@@ -1,1 +1,1 @@
-HELLO
+#Archivo de Configuracion para NeoVim
