@@ -1,1 +1,1 @@
-#Archivo de Configuracion para NeoVim
+# Archivo de Configuracion para NeoVim
