@@ -44,10 +44,10 @@ highlight ColoColum ctermbg=0 guibg=lightgrey
 
 call plug#begin('/home/programador/.config/nvim/plugged')
 
+"Temas
 Plug 'morhetz/gruvbox'                          "tema de colores
 Plug 'vim-airline/vim-airline'                  "barra airline
 Plug 'vim-airline/vim-airline-themes'            "thema para barra airline
-Plug 'lilydjwg/colorizer'                       "colorea comandos de colorea
 
 "LSP
 Plug 'neovim/nvim-lspconfig'
@@ -59,23 +59,25 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
-Plug 'scrooloose/nerdtree'                      "menu de carpetas
-
- 
-
-Plug 'jiangmiao/auto-pairs'                     "enpareja parentesis
-
-
-Plug 'mhinz/vim-signify'                        "marca nuevas lineas
-Plug 'Yggdroot/indentLine'                      "marca indentaciones
-Plug 'tpope/vim-fugitive'                       "pluguin de git
-Plug 'preservim/nerdcommenter'                  "añade comentarios auto
-"Plug 'mattn/emmet-vim'                          "plantilla html-ccs
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  "resalta archvos en nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'              "seguimiento de git en nerdtree
+"nerdtree
+Plug 'preservim/nerdtree' 
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'                   "iconos para nvim
 
+"sintaxis
+Plug 'sheerun/vim-polyglot'
 
+"funcionalidades
+Plug 'jiangmiao/auto-pairs'                     "enpareja parentesis
+Plug 'Yggdroot/indentLine'                      "marca indentaciones
+Plug 'preservim/nerdcommenter'                  "añade comentarios auto
+Plug 'lilydjwg/colorizer'                       "colorea comandos de colorea
+
+"Funcionalidades git
+Plug 'mhinz/vim-signify'                        "marca nuevas lineas
+Plug 'tpope/vim-fugitive'                       "pluguin de git
+
+"Plug 'mattn/emmet-vim'                          "plantilla html-ccs
 call plug#end()
 
 "/////////////////////////////////////////////////////////////////////////////
@@ -108,15 +110,18 @@ nnoremap <leader>w :w<CR>
 vnoremap <leader>w <ESC>:w<CR>         
 "comando de  salir
 nnoremap <leader>q :q<CR>         
-"Comando para abrir NERDTREE
-nnoremap <leader>\ :NERDTree<CR> 
-
+"Comando para abrir nerdtree
+let NERDTreeQuitOnOpen=1
+nnoremap <silent> <F2> :NERDTreeFind<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 set completeopt=menu,menuone,noselect
 
+" configuracion de airline
+let g:airline#extensions#tabline#enabled = 1
+
 
 "LSP configuracion
-
 
 lua << EOF
 
@@ -188,8 +193,6 @@ lua << EOF
   require('lspconfig')['pyright'].setup {
     capabilities = capabilities
   }
- -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   require('lspconfig')['html'].setup {
     capabilities = capabilities
   }
