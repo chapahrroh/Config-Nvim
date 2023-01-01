@@ -42,7 +42,7 @@ highlight ColoColum ctermbg=0 guibg=lightgrey
 "Instalacion de pluguins
 "////////////////////////////////////////////////////////////////////////////
 
-call plug#begin('/home/programador/.config/nvim/plugged')
+call plug#begin('/home/$USER/.config/nvim/plugged')
 
 "Temas
 Plug 'morhetz/gruvbox'                          "tema de colores
@@ -105,8 +105,8 @@ let g:airline_powerline_fonts=1
 let mapleader = " "   " definicion de tecla lider, este caso barra espaciadora
 
 "comaondo para actualizar NVIM
-nmap <F5> :source /home/programador/.config/nvim/init.vim<CR>   
-vmap <F5> :source /home/programador/.config/nvim/init.vim<CR>  
+nmap <F5> :source /home/$USER/.config/nvim/init.vim<CR>   
+vmap <F5> :source /home/$USER/.config/nvim/init.vim<CR>  
 
 "Comando de gurardar
 inoremap <leader>w <ESC>:w<CR>         
