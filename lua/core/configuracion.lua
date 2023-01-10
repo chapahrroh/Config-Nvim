@@ -9,8 +9,16 @@ local opt  = vim.opt
 
 opt.number         = true
 opt.relativenumber = true
-opt.mouse          = a
---opt.encoding       = UTF-8
 opt.cursorline     = true
---opt.colorcolumn    = true
+opt.colorcolumn    = "120"
+opt.showcmd        = true
+opt.laststatus     = 2
+opt.autowrite      = true
+opt.autoread       = true
 
+--espacios del tab--
+
+opt.tabstop        = 4
+opt.shiftwidth     = 4
+opt.shiftround     = true
+opt.expandtab      = true 
