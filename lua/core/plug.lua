@@ -15,15 +15,35 @@ return require('packer').startup(function(use)
   -- Plugin por defecto
   use 'wbthomason/packer.nvim'
   -- Mis Plugins
+  --    Temas
   use 'ellisonleao/gruvbox.nvim'
+  --     Menu
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
-  use 'nvim-lualine/lualine.nvim'  
+  --    Barra de estados
+  use 'nvim-lualine/lualine.nvim'
+  --    resaltado de codigo
   use 'nvim-treesitter/nvim-treesitter'
+
+  --    Auto completado 
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  --    snippet
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
+
+  -- git
+  use 'tpope/vim-fugitive'
+ 
+  --    telescope
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.0',
   requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  --  lsp 
   use {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -36,4 +56,4 @@ return require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   end
-end) 
+end)
