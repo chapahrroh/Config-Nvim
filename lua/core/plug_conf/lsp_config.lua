@@ -42,4 +42,9 @@ require("lspconfig").html.setup{
     on_attach    = on_attach,
     capabilities = capabilities,
 }
+require("lspconfig").jsonls.setup{
+    on_attach    = on_attach,
+    capabilities = capabilities,
+}
+
 

@@ -17,17 +17,22 @@ return require('packer').startup(function(use)
   -- Mis Plugins
   --    Temas
   use 'ellisonleao/gruvbox.nvim'
+  
   --     Menu
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
+  
   --    Barra de estados
   use 'nvim-lualine/lualine.nvim'
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  
   --    resaltado de codigo
   use 'nvim-treesitter/nvim-treesitter'
 
   --    Auto completado 
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'onsails/lspkind.nvim'
 
   --    snippet
   use 'L3MON4D3/LuaSnip'
@@ -37,6 +42,9 @@ return require('packer').startup(function(use)
   -- git
   use 'tpope/vim-fugitive'
  
+  -- autopair
+  use 'windwp/nvim-autopairs'
+
   --    telescope
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.0',
