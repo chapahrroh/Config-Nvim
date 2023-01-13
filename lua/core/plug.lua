@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
   -- autopair
   use 'windwp/nvim-autopairs'
 
+  --Notificaciones
+  use "rcarriga/nvim-notify"
   --    telescope
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.0',
