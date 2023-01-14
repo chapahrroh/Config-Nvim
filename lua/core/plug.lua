@@ -44,6 +44,9 @@ return require('packer').startup(function(use)
  
   -- autopair
   use 'windwp/nvim-autopairs'
+  
+  --dashborad
+  use "glepnir/dashboard-nvim"  
 
   --Notificaciones
   use "rcarriga/nvim-notify"
