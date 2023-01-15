@@ -4,61 +4,61 @@ local home = os.getenv("HOME")
 db.default_banner = {
 	"",
 	"",
-	" ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
-	" ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
-	" ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
-	" ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
-	" ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
-	" ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+	"███╗   ██╗███████╗ ██████╗        ██████╗██╗  ██╗ █████╗ ██████╗  █████╗ ",
+	"████╗  ██║██╔════╝██╔═══██╗      ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔══██╗",
+	"██╔██╗ ██║█████╗  ██║   ██║█████╗██║     ███████║███████║██████╔╝███████║",
+	"██║╚██╗██║██╔══╝  ██║   ██║╚════╝██║     ██╔══██║██╔══██║██╔═══╝ ██╔══██║",
+	"██║ ╚████║███████╗╚██████╔╝      ╚██████╗██║  ██║██║  ██║██║     ██║  ██║",
+	"╚═╝  ╚═══╝╚══════╝ ╚═════╝        ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝",
 	"",
-	" [ TIP: To exit Neovim, just power off your computer. ] ",
+	" [ Una configruracion disenada para dislexicos y mancos ] ",
 	"",
 }
 -- linux
 --db.preview_command = 'ueberzug'
 --
 db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
-db.preview_file_height = 11
+db.preview_file_height = 30
 db.preview_file_width = 70
 db.custom_center = {
 	{
 		icon = "  ",
-		desc = "Recent sessions                         ",
-		shortcut = "SPC s l",
+		desc = "Sesion Reciente(aun no funciona)           ",
+		shortcut = "<SPACE>+s+l",
 		action = "SessionLoad",
 	},
 	{
 		icon = "  ",
-		desc = "Find recent files                       ",
+		desc = "Archivos Recientes                         ",
 		action = "Telescope oldfiles",
-		shortcut = "SPC f r",
+		shortcut = "<SPACE>+t+o",
 	},
 	{
 		icon = "  ",
-		desc = "Find files                              ",
+		desc = "Archivos                                   ",
 		action = "Telescope find_files",
-		shortcut = "SPC f f",
+		shortcut = "<SPACE>+t+f",
 	},
 	{
-		icon = "  ",
-		desc = "File browser                            ",
-		action = "Telescope file_browser",
-		shortcut = "SPC f b",
+		icon = "  ",
+		desc = "Neo-Tree                                   ",
+		action = "NvimTreeOpen",
+		shortcut = "<space>+1",
 	},
 	{
 		icon = "  ",
-		desc = "Find word                               ",
+		desc = "Palabras clave                             ",
 		action = "Telescope live_grep",
-		shortcut = "SPC f w",
+		shortcut = "<SPACE>+t+p",
 	},
 	{
 		icon = "  ",
-		desc = "Load new theme                          ",
+		desc = "Cambio de tema de coolor                   ",
 		action = "Telescope colorscheme",
-		shortcut = "SPC h t",
+		shortcut = "<SPACE>+t+t",
 	},
 }
-db.custom_footer = { "", "🎉 If I'm using Neovim, then my Emacs config must be broken!" }
+db.custom_footer = { "", "🎉 Los chapa-proyect te llenan el ALMA" }
 db.session_directory = "/home/dt/.config/nvim/session"
 
 
